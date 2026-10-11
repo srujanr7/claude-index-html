@@ -3,137 +3,113 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Srujan | Product</title>
-<meta name="description" content="Srujan is a product analyst in Pune building logistics products and his own ventures.">
+<title>Srujan | Product Analyst, Pune</title>
+<meta name="description" content="Release notes for Srujan: product analyst at Xpressbees, founder of DoctorsClub, builder of side projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F4F5F1; --surface:#FFFFFF; --ink:#14243A; --muted:#55657A; --line:#D5DAD2; --amber:#F5A300; --on-amber:#14243A;
-  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif; --body:'Instrument Sans','Segoe UI',system-ui,sans-serif;
+  --bg:#F6F8FA; --panel:#FFFFFF; --ink:#0F1A24; --muted:#58677A; --rule:#D9E0E8; --blue:#2F5BFF; --on-blue:#FFFFFF; --tint:#E8EEFF;
+  --display:'Familjen Grotesk','Segoe UI',system-ui,sans-serif; --body:'Literata',Georgia,serif;
   box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1A2A;--surface:#152538;--ink:#E9EEF4;--muted:#9AABBF;--line:#2A3D54;}}
-:root[data-theme="dark"]{--bg:#0E1A2A;--surface:#152538;--ink:#E9EEF4;--muted:#9AABBF;--line:#2A3D54;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C131B;--panel:#131D29;--ink:#EDF2F7;--muted:#9BABBD;--rule:#27364A;--blue:#7C98FF;--on-blue:#0C131B;--tint:#1A2742;}}
+:root[data-theme="dark"]{--bg:#0C131B;--panel:#131D29;--ink:#EDF2F7;--muted:#9BABBD;--rule:#27364A;--blue:#7C98FF;--on-blue:#0C131B;--tint:#1A2742;}
 html{scroll-padding-top:env(safe-area-inset-top,0px);}
 *,*::before,*::after{box-sizing:border-box;}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased;}
-a{color:inherit;text-decoration-color:var(--amber);text-decoration-thickness:2px;text-underline-offset:3px;}
-a:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:2px;}
-.wrap{max-width:880px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2rem);}
-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;font-weight:500;}
-nav .links{display:flex;gap:1.5rem;}
-h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-0.02em;}
-h1{font-size:clamp(2.4rem,7vw,4.25rem);font-weight:700;max-width:16ch;}
-h2{font-size:1.75rem;font-weight:700;margin-bottom:1.5rem;}
-h3{font-size:1.25rem;font-weight:700;}
-.hero{display:grid;gap:2.5rem;padding:3rem 0 4rem;}
-.hero p.lead{font-size:1.25rem;max-width:34rem;color:var(--muted);margin:1.25rem 0 0;}
-.label{background:var(--surface);border:2px dashed var(--ink);border-radius:6px;padding:1.25rem 1.5rem;max-width:30rem;position:relative;}
-.label dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.25rem;font-size:.975rem;}
-.label dt{color:var(--muted);}
-.label dd{margin:0;font-weight:600;}
-.label .code{margin-top:1.1rem;height:2.5rem;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 6px,transparent 6px 9px,var(--ink) 9px 12px,transparent 12px 14px);}
-.label .stamp{position:absolute;top:-.8rem;right:1rem;background:var(--amber);color:var(--on-amber);font-weight:600;font-size:.85rem;padding:.2rem .7rem;border-radius:3px;}
-section{padding:3rem 0;border-top:1px solid var(--line);}
-.work{display:grid;gap:1.5rem;}
-.item{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.5rem;}
-.item p{margin:.5rem 0 0;color:var(--muted);max-width:60ch;}
-.item .meta{font-size:.9rem;color:var(--muted);margin-bottom:.35rem;}
-.timeline{list-style:none;margin:0;padding:0 0 0 1.5rem;border-left:2px solid var(--line);display:grid;gap:1.75rem;}
-.timeline li{position:relative;}
-.timeline li::before{content:"";position:absolute;left:calc(-1.5rem - 7px);top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--amber);border:2px solid var(--bg);box-shadow:0 0 0 2px var(--line);}
-.timeline .when{font-size:.9rem;color:var(--muted);}
-.timeline p{margin:.25rem 0 0;max-width:60ch;}
-.contact p{max-width:34rem;color:var(--muted);margin:0 0 1.25rem;}
-.btn{display:inline-block;background:var(--amber);color:var(--on-amber);font-weight:600;padding:.8rem 1.4rem;border-radius:6px;text-decoration:none;}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.7 var(--body);-webkit-font-smoothing:antialiased;}
+a{color:var(--blue);text-underline-offset:3px;}
+a:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:2px;}
+.wrap{max-width:960px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2.5rem);}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-0.025em;line-height:1.05;}
+.top{display:flex;justify-content:space-between;padding:1.5rem 0;font-family:var(--display);font-weight:500;}
+.top a{color:var(--ink);text-decoration:none;margin-left:1.5rem;}
+.top a:first-child{margin-left:0;}
+.hero{padding:clamp(2.5rem,9vw,6rem) 0 clamp(2.5rem,7vw,4.5rem);}
+h1{font-size:clamp(3rem,11vw,7.5rem);font-weight:700;}
+.hero .sub{font-size:1.3rem;max-width:36rem;margin:1.75rem 0 0;color:var(--muted);}
+.latest{display:inline-block;margin-top:2rem;background:var(--tint);color:var(--ink);padding:.6rem 1rem;border-radius:6px;font-family:var(--display);font-weight:500;}
+.latest b{color:var(--blue);}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700;padding-top:3rem;}
+.log{margin-top:2rem;border-top:1px solid var(--rule);}
+.entry{display:grid;gap:.75rem;padding:2rem 0;border-bottom:1px solid var(--rule);}
+.ver{font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--blue);}
+.when{display:block;font-family:var(--body);font-weight:400;font-size:.95rem;color:var(--muted);margin-top:.15rem;}
+.entry h3{font-size:1.5rem;font-weight:700;}
+.entry p{margin:.6rem 0 0;max-width:62ch;}
+.entry ul{margin:.75rem 0 0;padding-left:1.2rem;max-width:62ch;}
+.entry li{margin:.35rem 0;}
+.entry li::marker{color:var(--blue);}
+.contact{padding:3rem 0 4rem;}
+.contact p{max-width:34rem;color:var(--muted);margin:1rem 0 1.5rem;}
+.btn{display:inline-block;background:var(--blue);color:var(--on-blue);font-family:var(--display);font-weight:700;padding:.85rem 1.5rem;border-radius:6px;text-decoration:none;}
 .btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
-.social{display:flex;gap:1.25rem;margin-top:1.25rem;flex-wrap:wrap;}
-footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);}
-@media (min-width:760px){.hero{grid-template-columns:1.2fr 1fr;align-items:center;}.work{grid-template-columns:1fr 1fr;}.work .wide{grid-column:1/-1;}}
+.links{margin-top:1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap;}
+footer{border-top:1px solid var(--rule);padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem;}
+@media (min-width:760px){.entry{grid-template-columns:200px 1fr;gap:2.5rem;}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <nav aria-label="Primary">
-    <span>Srujan</span>
-    <div class="links"><a href="#work">Work</a><a href="#projects">Projects</a><a href="#path">Path</a><a href="#contact">Contact</a></div>
-  </nav>
+  <div class="top" role="navigation" aria-label="Primary"><span>Srujan</span><span><a href="#changelog">Changelog</a><a href="#contact">Contact</a></span></div>
 
   <header class="hero">
-    <div>
-      <h1>I build products for logistics, and a few of my own.</h1>
-      <p class="lead">Associate Product Analyst at Xpressbees in Pune, working at APM scope. I own a catalogue workstream and enterprise client integrations, and I started building companies before I started my first job.</p>
-    </div>
-    <div class="label" role="group" aria-label="Profile summary">
-      <span class="stamp">Pune, India</span>
-      <dl>
-        <dt>Role</dt><dd>Associate Product Analyst</dd>
-        <dt>Company</dt><dd>Xpressbees</dd>
-        <dt>Team</dt><dd>7-member product team</dd>
-        <dt>Owns</dt><dd>Product catalogue, B2B/B2C integrations</dd>
-        <dt>Background</dt><dd>Electronics &amp; Telecom, PICT</dd>
-      </dl>
-      <div class="code" aria-hidden="true"></div>
-    </div>
+    <h1>Srujan</h1>
+    <p class="sub">Product analyst in Pune. I build logistics products at Xpressbees and companies of my own. Here are the release notes so far, newest first.</p>
+    <span class="latest">Latest release: <b>v3.0</b>, Associate Product Analyst at Xpressbees</span>
   </header>
 
-  <section id="work">
-    <h2>Work at Xpressbees</h2>
-    <div class="work">
-      <article class="item">
-        <p class="meta">Workstream</p>
-        <h3>Product catalogue</h3>
-        <p>Building the catalogue to recover revenue lost to billing disputes, so charges are clear to clients before they become disagreements.</p>
+  <main>
+    <h2 id="changelog">Changelog</h2>
+    <div class="log">
+      <article class="entry">
+        <div class="ver">v3.0<span class="when">November 2025 to now</span></div>
+        <div>
+          <h3>Xpressbees, Associate Product Analyst</h3>
+          <p>First full-time role, working at APM scope on a 7-member product team.</p>
+          <ul>
+            <li>Owning the product catalogue workstream, aimed at recovering revenue lost to billing disputes.</li>
+            <li>Owning enterprise B2B and B2C client integrations.</li>
+          </ul>
+        </div>
       </article>
-      <article class="item">
-        <p class="meta">Workstream</p>
-        <h3>Enterprise integrations</h3>
-        <p>Owning how B2B and B2C clients connect to Xpressbees, from first requirements to a working integration.</p>
+
+      <article class="entry">
+        <div class="ver">v2.1<span class="when">Side projects</span></div>
+        <div>
+          <h3>Tools I build for myself</h3>
+          <ul>
+            <li><b>Pune Transit MCP:</b> an MCP server that lets an AI assistant book Pune Metro, PMPML and MSRTC tickets.</li>
+            <li><b>Deploy extension:</b> a browser extension that deploys Claude artifacts to Vercel and commits them to GitHub in one click.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="ver">v2.0<span class="when">Before the first job</span></div>
+        <div>
+          <h3>DoctorsClub, founder</h3>
+          <p>Started a healthtech company and grew it to 102 doctors across Pune.</p>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="ver">v1.0<span class="when">College</span></div>
+        <div>
+          <h3>Electronics &amp; Telecommunication Engineering, PICT</h3>
+          <p>The engineering base. I landed my first product role by cold-emailing the VP of Product.</p>
+        </div>
       </article>
     </div>
-  </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="work">
-      <article class="item wide">
-        <p class="meta">Founder</p>
-        <h3>DoctorsClub</h3>
-        <p>A healthtech startup I founded and grew to 102 doctors across Pune.</p>
-      </article>
-      <article class="item">
-        <p class="meta">Side project</p>
-        <h3>Pune Transit MCP</h3>
-        <p>An MCP server that lets an AI assistant book Pune Metro, PMPML and MSRTC tickets.</p>
-      </article>
-      <article class="item">
-        <p class="meta">Side project</p>
-        <h3>Deploy extension</h3>
-        <p>A browser extension that deploys Claude artifacts to Vercel and commits them to GitHub in one click.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="path">
-    <h2>Path</h2>
-    <ol class="timeline">
-      <li><span class="when">College</span><h3>Electronics &amp; Telecommunication Engineering, PICT</h3><p>Studied engineering, then started DoctorsClub on the side.</p></li>
-      <li><span class="when">Before the first job</span><h3>Founded DoctorsClub</h3><p>Took it from idea to 102 doctors in Pune.</p></li>
-      <li><span class="when">November 2025</span><h3>Joined Xpressbees</h3><p>My first full-time role, which I got by cold-emailing the VP of Product.</p></li>
-    </ol>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>I'm open to conversations about product, logistics and early-stage ideas.</p>
-    <!-- Replace the placeholder email and social links below -->
-    <a class="btn" href="mailto:your@email.com">Email me</a>
-    <div class="social">
-      <a href="https://www.linkedin.com/in/your-handle">LinkedIn</a>
-      <a href="https://github.com/your-handle">GitHub</a>
-    </div>
-  </section>
+    <section class="contact" id="contact">
+      <h2>Get in touch</h2>
+      <p>Open to conversations about product, logistics and early-stage ideas.</p>
+      <!-- Replace the placeholder email and links below -->
+      <a class="btn" href="mailto:your@email.com">Email me</a>
+      <div class="links"><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a><a href="https://github.com/your-handle">GitHub</a></div>
+    </section>
+  </main>
 
   <footer>Srujan, Pune</footer>
 </div>
