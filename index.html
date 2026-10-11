@@ -2,253 +2,140 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Asha Rao | Portfolio</title>
-<meta name="description" content="Sample portfolio of Asha Rao, a full-stack developer who builds small, fast web tools.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Srujan | Product</title>
+<meta name="description" content="Srujan is a product analyst in Pune building logistics products and his own ventures.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; }
-  body { margin: 0; }
-  /* Layout: one left-aligned column. Greeting on top, then projects as a dated ledger, then about and contact. */
-  :root {
-    --bg: #f3f6f4;
-    --surface: #e9efec;
-    --fg: #14211c;
-    --muted: #5a6b64;
-    --accent: #0c7a5b;
-    --line: #d3ddd8;
-    --display: "Fraunces", Georgia, "Times New Roman", serif;
-    --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-    --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #0f1714;
-      --surface: #16211d;
-      --fg: #e8efeb;
-      --muted: #93a59d;
-      --accent: #4fd1a5;
-      --line: #25332d;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #0f1714;
-    --surface: #16211d;
-    --fg: #e8efeb;
-    --muted: #93a59d;
-    --accent: #4fd1a5;
-    --line: #25332d;
-    color-scheme: dark;
-  }
-
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-
-  body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: var(--body);
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  .page {
-    max-width: 880px;
-    margin-inline: auto;
-    padding-inline: 20px;
-    padding-block: 24px 64px;
-    display: flex;
-    flex-direction: column;
-    gap: 72px;
-  }
-  a { color: var(--accent); }
-  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-  /* Top bar */
-  .top {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 12px 24px;
-    font-family: var(--mono);
-    font-size: 0.875rem;
-  }
-  .top strong { font-weight: 500; }
-  .top nav { display: flex; flex-wrap: wrap; gap: 20px; }
-  .top nav a { color: var(--muted); text-decoration: none; }
-  .top nav a:hover { color: var(--accent); }
-
-  /* Hero */
-  .hero { display: flex; flex-direction: column; gap: 20px; }
-  h1 {
-    font-family: var(--display);
-    font-weight: 600;
-    font-size: clamp(3rem, 13vw, 7rem);
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    margin: 0;
-    text-wrap: balance;
-  }
-  h1 span { color: var(--accent); }
-  .lede { margin: 0; max-width: 56ch; font-size: 1.125rem; color: var(--muted); }
-  .lede b { color: var(--fg); font-weight: 500; }
-  .prompt {
-    margin: 0;
-    padding-top: 16px;
-    border-top: 1px solid var(--line);
-    font-family: var(--mono);
-    font-size: 0.875rem;
-    color: var(--muted);
-    overflow-wrap: anywhere;
-  }
-  .prompt b { color: var(--accent); font-weight: 500; }
-  .cursor {
-    display: inline-block;
-    width: 0.55em;
-    height: 1.05em;
-    margin-left: 2px;
-    vertical-align: text-bottom;
-    background: var(--accent);
-    animation: blink 1.1s steps(1) infinite;
-  }
-  @keyframes blink { 50% { opacity: 0; } }
-  @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
-
-  /* Sections */
-  section { display: flex; flex-direction: column; gap: 24px; }
-  h2 {
-    margin: 0;
-    font-family: var(--mono);
-    font-weight: 500;
-    font-size: 0.8125rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  /* Projects ledger */
-  .projects { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-  .projects li {
-    display: grid;
-    grid-template-columns: 5rem minmax(0, 1fr);
-    gap: 8px 24px;
-    padding-block: 24px;
-    border-bottom: 1px solid var(--line);
-  }
-  .year { font-family: var(--mono); font-size: 0.875rem; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 6px; }
-  .project { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
-  h3 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 1.5rem; line-height: 1.2; }
-  .project p { margin: 0; max-width: 60ch; color: var(--muted); }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 0; padding: 0; list-style: none; }
-  .tags li {
-    display: block;
-    padding: 2px 10px;
-    border: 0;
-    border-radius: 999px;
-    background: var(--surface);
-    font-family: var(--mono);
-    font-size: 0.75rem;
-    color: var(--fg);
-  }
-
-  /* About */
-  .about { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 32px; }
-  .about p { margin: 0; max-width: 60ch; }
-  .about dl { margin: 0; display: flex; flex-direction: column; gap: 12px; font-size: 0.9375rem; }
-  .about dt { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
-  .about dd { margin: 0; }
-
-  /* Contact */
-  .contact { margin: 0; font-family: var(--display); font-weight: 600; font-size: clamp(1.5rem, 5vw, 2.25rem); line-height: 1.2; overflow-wrap: anywhere; user-select: all; }
-  .note { margin: 0; color: var(--muted); font-size: 0.9375rem; }
-
-  footer { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
-
-  @media (max-width: 600px) {
-    .page { gap: 56px; }
-    .projects li { grid-template-columns: minmax(0, 1fr); }
-    .year { padding-top: 0; }
-    .about { grid-template-columns: minmax(0, 1fr); }
-  }
+:root{
+  --bg:#F4F5F1; --surface:#FFFFFF; --ink:#14243A; --muted:#55657A; --line:#D5DAD2; --amber:#F5A300; --on-amber:#14243A;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif; --body:'Instrument Sans','Segoe UI',system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1A2A;--surface:#152538;--ink:#E9EEF4;--muted:#9AABBF;--line:#2A3D54;}}
+:root[data-theme="dark"]{--bg:#0E1A2A;--surface:#152538;--ink:#E9EEF4;--muted:#9AABBF;--line:#2A3D54;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*,*::before,*::after{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration-color:var(--amber);text-decoration-thickness:2px;text-underline-offset:3px;}
+a:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:2px;}
+.wrap{max-width:880px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2rem);}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;font-weight:500;}
+nav .links{display:flex;gap:1.5rem;}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-0.02em;}
+h1{font-size:clamp(2.4rem,7vw,4.25rem);font-weight:700;max-width:16ch;}
+h2{font-size:1.75rem;font-weight:700;margin-bottom:1.5rem;}
+h3{font-size:1.25rem;font-weight:700;}
+.hero{display:grid;gap:2.5rem;padding:3rem 0 4rem;}
+.hero p.lead{font-size:1.25rem;max-width:34rem;color:var(--muted);margin:1.25rem 0 0;}
+.label{background:var(--surface);border:2px dashed var(--ink);border-radius:6px;padding:1.25rem 1.5rem;max-width:30rem;position:relative;}
+.label dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.35rem 1.25rem;font-size:.975rem;}
+.label dt{color:var(--muted);}
+.label dd{margin:0;font-weight:600;}
+.label .code{margin-top:1.1rem;height:2.5rem;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 6px,transparent 6px 9px,var(--ink) 9px 12px,transparent 12px 14px);}
+.label .stamp{position:absolute;top:-.8rem;right:1rem;background:var(--amber);color:var(--on-amber);font-weight:600;font-size:.85rem;padding:.2rem .7rem;border-radius:3px;}
+section{padding:3rem 0;border-top:1px solid var(--line);}
+.work{display:grid;gap:1.5rem;}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.5rem;}
+.item p{margin:.5rem 0 0;color:var(--muted);max-width:60ch;}
+.item .meta{font-size:.9rem;color:var(--muted);margin-bottom:.35rem;}
+.timeline{list-style:none;margin:0;padding:0 0 0 1.5rem;border-left:2px solid var(--line);display:grid;gap:1.75rem;}
+.timeline li{position:relative;}
+.timeline li::before{content:"";position:absolute;left:calc(-1.5rem - 7px);top:.55rem;width:12px;height:12px;border-radius:50%;background:var(--amber);border:2px solid var(--bg);box-shadow:0 0 0 2px var(--line);}
+.timeline .when{font-size:.9rem;color:var(--muted);}
+.timeline p{margin:.25rem 0 0;max-width:60ch;}
+.contact p{max-width:34rem;color:var(--muted);margin:0 0 1.25rem;}
+.btn{display:inline-block;background:var(--amber);color:var(--on-amber);font-weight:600;padding:.8rem 1.4rem;border-radius:6px;text-decoration:none;}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
+.social{display:flex;gap:1.25rem;margin-top:1.25rem;flex-wrap:wrap;}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line);}
+@media (min-width:760px){.hero{grid-template-columns:1.2fr 1fr;align-items:center;}.work{grid-template-columns:1fr 1fr;}.work .wide{grid-column:1/-1;}}
 </style>
 </head>
 <body>
-<div class="page">
-  <header class="top">
-    <strong>Asha Rao</strong>
-    <nav aria-label="Sections">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+<div class="wrap">
+  <nav aria-label="Primary">
+    <span>Srujan</span>
+    <div class="links"><a href="#work">Work</a><a href="#projects">Projects</a><a href="#path">Path</a><a href="#contact">Contact</a></div>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>I build products for logistics, and a few of my own.</h1>
+      <p class="lead">Associate Product Analyst at Xpressbees in Pune, working at APM scope. I own a catalogue workstream and enterprise client integrations, and I started building companies before I started my first job.</p>
+    </div>
+    <div class="label" role="group" aria-label="Profile summary">
+      <span class="stamp">Pune, India</span>
+      <dl>
+        <dt>Role</dt><dd>Associate Product Analyst</dd>
+        <dt>Company</dt><dd>Xpressbees</dd>
+        <dt>Team</dt><dd>7-member product team</dd>
+        <dt>Owns</dt><dd>Product catalogue, B2B/B2C integrations</dd>
+        <dt>Background</dt><dd>Electronics &amp; Telecom, PICT</dd>
+      </dl>
+      <div class="code" aria-hidden="true"></div>
+    </div>
   </header>
 
-  <div class="hero">
-    <h1>Hello, <span>world.</span></h1>
-    <p class="lede">I'm <b>Asha Rao</b>, a full-stack developer who builds small, fast web tools. I like plain interfaces, clear data, and software that does one job well.</p>
-    <p class="prompt"><b>$</b> ls projects/<span class="cursor" aria-hidden="true"></span></p>
-  </div>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul class="projects">
-      <li>
-        <span class="year">2026</span>
-        <div class="project">
-          <h3>Ledgerly</h3>
-          <p>An expense tracker for freelancers. Import a bank statement, tag each line once, and get a tax-ready summary at the end of the quarter.</p>
-          <ul class="tags"><li>React</li><li>Node.js</li><li>PostgreSQL</li></ul>
-        </div>
-      </li>
-      <li>
-        <span class="year">2025</span>
-        <div class="project">
-          <h3>Routewise</h3>
-          <p>A delivery route planner that orders up to 50 stops by drive time and shares the route with the driver as a single link.</p>
-          <ul class="tags"><li>TypeScript</li><li>Express</li><li>Maps API</li></ul>
-        </div>
-      </li>
-      <li>
-        <span class="year">2025</span>
-        <div class="project">
-          <h3>Quizdeck</h3>
-          <p>A flashcard app that turns class notes into multiple-choice quizzes and tracks which topics a student keeps getting wrong.</p>
-          <ul class="tags"><li>Next.js</li><li>Tailwind</li><li>SQLite</li></ul>
-        </div>
-      </li>
-      <li>
-        <span class="year">2024</span>
-        <div class="project">
-          <h3>Statusboard</h3>
-          <p>A one-page uptime monitor. It pings your services every minute and shows 90 days of history without any setup beyond a URL.</p>
-          <ul class="tags"><li>Go</li><li>HTMX</li><li>Redis</li></ul>
-        </div>
-      </li>
-    </ul>
-  </section>
-
-  <section id="about">
-    <h2>About</h2>
-    <div class="about">
-      <p>I have spent five years building internal tools and customer-facing products for small teams. Most of my work starts with a messy spreadsheet and ends with a page people open every morning. I write about what I learn and keep my side projects open source.</p>
-      <dl>
-        <div><dt>Based in</dt><dd>Pune, India</dd></div>
-        <div><dt>Works with</dt><dd>JavaScript, TypeScript, Go, SQL</dd></div>
-        <div><dt>Open to</dt><dd>Freelance and contract work</dd></div>
-      </dl>
+  <section id="work">
+    <h2>Work at Xpressbees</h2>
+    <div class="work">
+      <article class="item">
+        <p class="meta">Workstream</p>
+        <h3>Product catalogue</h3>
+        <p>Building the catalogue to recover revenue lost to billing disputes, so charges are clear to clients before they become disagreements.</p>
+      </article>
+      <article class="item">
+        <p class="meta">Workstream</p>
+        <h3>Enterprise integrations</h3>
+        <p>Owning how B2B and B2C clients connect to Xpressbees, from first requirements to a working integration.</p>
+      </article>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p class="contact">hello@example.com</p>
-    <p class="note">Select the address to copy it. I usually reply within two days.</p>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="work">
+      <article class="item wide">
+        <p class="meta">Founder</p>
+        <h3>DoctorsClub</h3>
+        <p>A healthtech startup I founded and grew to 102 doctors across Pune.</p>
+      </article>
+      <article class="item">
+        <p class="meta">Side project</p>
+        <h3>Pune Transit MCP</h3>
+        <p>An MCP server that lets an AI assistant book Pune Metro, PMPML and MSRTC tickets.</p>
+      </article>
+      <article class="item">
+        <p class="meta">Side project</p>
+        <h3>Deploy extension</h3>
+        <p>A browser extension that deploys Claude artifacts to Vercel and commits them to GitHub in one click.</p>
+      </article>
+    </div>
   </section>
 
-  <footer>Sample portfolio. The name, projects and contact details are placeholders.</footer>
+  <section id="path">
+    <h2>Path</h2>
+    <ol class="timeline">
+      <li><span class="when">College</span><h3>Electronics &amp; Telecommunication Engineering, PICT</h3><p>Studied engineering, then started DoctorsClub on the side.</p></li>
+      <li><span class="when">Before the first job</span><h3>Founded DoctorsClub</h3><p>Took it from idea to 102 doctors in Pune.</p></li>
+      <li><span class="when">November 2025</span><h3>Joined Xpressbees</h3><p>My first full-time role, which I got by cold-emailing the VP of Product.</p></li>
+    </ol>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>I'm open to conversations about product, logistics and early-stage ideas.</p>
+    <!-- Replace the placeholder email and social links below -->
+    <a class="btn" href="mailto:your@email.com">Email me</a>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/your-handle">LinkedIn</a>
+      <a href="https://github.com/your-handle">GitHub</a>
+    </div>
+  </section>
+
+  <footer>Srujan, Pune</footer>
 </div>
 </body>
 </html>
