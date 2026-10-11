@@ -2,116 +2,226 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Srujan Ranpise | Product Analyst, Pune</title>
-<meta name="description" content="Release notes for Srujan Ranpise: product analyst at Xpressbees, founder of DoctorsClub, builder of side projects.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hello, world — Habit Tracker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#F6F8FA; --panel:#FFFFFF; --ink:#0F1A24; --muted:#58677A; --rule:#D9E0E8; --blue:#2F5BFF; --on-blue:#FFFFFF; --tint:#E8EEFF;
-  --display:'Familjen Grotesk','Segoe UI',system-ui,sans-serif; --body:'Literata',Georgia,serif;
-  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C131B;--panel:#131D29;--ink:#EDF2F7;--muted:#9BABBD;--rule:#27364A;--blue:#7C98FF;--on-blue:#0C131B;--tint:#1A2742;}}
-:root[data-theme="dark"]{--bg:#0C131B;--panel:#131D29;--ink:#EDF2F7;--muted:#9BABBD;--rule:#27364A;--blue:#7C98FF;--on-blue:#0C131B;--tint:#1A2742;}
-html{scroll-padding-top:env(safe-area-inset-top,0px);}
-*,*::before,*::after{box-sizing:border-box;}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.7 var(--body);-webkit-font-smoothing:antialiased;}
-a{color:var(--blue);text-underline-offset:3px;}
-a:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:2px;}
-.wrap{max-width:960px;margin:0 auto;padding:0 clamp(1.25rem,5vw,2.5rem);}
-h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-0.025em;line-height:1.05;}
-.top{display:flex;justify-content:space-between;padding:1.5rem 0;font-family:var(--display);font-weight:500;}
-.top a{color:var(--ink);text-decoration:none;margin-left:1.5rem;}
-.top a:first-child{margin-left:0;}
-.hero{padding:clamp(2.5rem,9vw,6rem) 0 clamp(2.5rem,7vw,4.5rem);}
-h1{font-size:clamp(2.75rem,9vw,6rem);font-weight:700;}
-.hero .sub{font-size:1.3rem;max-width:36rem;margin:1.75rem 0 0;color:var(--muted);}
-.latest{display:inline-block;margin-top:2rem;background:var(--tint);color:var(--ink);padding:.6rem 1rem;border-radius:6px;font-family:var(--display);font-weight:500;}
-.latest b{color:var(--blue);}
-h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700;padding-top:3rem;}
-.log{margin-top:2rem;border-top:1px solid var(--rule);}
-.entry{display:grid;gap:.75rem;padding:2rem 0;border-bottom:1px solid var(--rule);}
-.ver{font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--blue);}
-.when{display:block;font-family:var(--body);font-weight:400;font-size:.95rem;color:var(--muted);margin-top:.15rem;}
-.entry h3{font-size:1.5rem;font-weight:700;}
-.entry p{margin:.6rem 0 0;max-width:62ch;}
-.entry ul{margin:.75rem 0 0;padding-left:1.2rem;max-width:62ch;}
-.entry li{margin:.35rem 0;}
-.entry li::marker{color:var(--blue);}
-.contact{padding:3rem 0 4rem;}
-.contact p{max-width:34rem;color:var(--muted);margin:1rem 0 1.5rem;}
-.btn{display:inline-block;background:var(--blue);color:var(--on-blue);font-family:var(--display);font-weight:700;padding:.85rem 1.5rem;border-radius:6px;text-decoration:none;}
-.btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}
-.links{margin-top:1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap;}
-footer{border-top:1px solid var(--rule);padding:1.5rem 0 2.5rem;color:var(--muted);font-size:.9rem;}
-@media (min-width:760px){.entry{grid-template-columns:200px 1fr;gap:2.5rem;}}
+  :root {
+    --bg: #eef3f4;
+    --surface: #ffffff;
+    --ink: #14263a;
+    --muted: #5d7080;
+    --line: #d5dfe3;
+    --accent: #0a8f8a;
+    --accent-ink: #ffffff;
+    --danger: #b3382c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1b26;
+      --surface: #162534;
+      --ink: #e8f0f3;
+      --muted: #8da2b2;
+      --line: #2a3d4e;
+      --accent: #2cc4bd;
+      --accent-ink: #072523;
+      --danger: #ff8b7d;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.5;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 48px 20px 64px; }
+  h1 {
+    font-size: clamp(2.6rem, 10vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin: 0 0 8px;
+  }
+  .sub { color: var(--muted); margin: 0 0 32px; }
+
+  form { display: flex; gap: 8px; margin-bottom: 24px; }
+  input[type="text"] {
+    flex: 1; min-width: 0;
+    font: inherit; color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  button { font: inherit; cursor: pointer; }
+  .add {
+    background: var(--accent); color: var(--accent-ink);
+    border: 0; border-radius: 10px;
+    padding: 12px 18px; font-weight: 600;
+  }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+  .habit {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+  .name { font-weight: 600; font-size: 1.1rem; overflow-wrap: anywhere; }
+  .streak { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+  .streak b { color: var(--accent); font-size: 1.1rem; }
+
+  .days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  .day {
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+    padding: 8px 0;
+    background: transparent; color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    font-size: 0.78rem;
+  }
+  .day.done { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 600; }
+  .day.today:not(.done) { border-color: var(--ink); color: var(--ink); }
+  .day .mark { font-size: 1rem; min-height: 1.2em; }
+
+  .remove {
+    background: none; border: 0; color: var(--muted);
+    font-size: 0.85rem; margin-top: 10px; padding: 0; text-decoration: underline;
+  }
+  .remove:hover { color: var(--danger); }
+  .empty { color: var(--muted); text-align: center; padding: 32px 0; }
+  @media (prefers-reduced-motion: no-preference) {
+    .day, .add { transition: background 0.15s, color 0.15s; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="top" role="navigation" aria-label="Primary"><span>Srujan Ranpise</span><span><a href="#changelog">Changelog</a><a href="#contact">Contact</a></span></div>
+<main>
+  <h1>Hello, world.</h1>
+  <p class="sub">Add a habit, then tap a day to check it off.</p>
 
-  <header class="hero">
-    <h1>Srujan Ranpise</h1>
-    <p class="sub">Product analyst in Pune. I build logistics products at Xpressbees and companies of my own. Here are the release notes so far, newest first.</p>
-    <span class="latest">Latest release: <b>v3.0</b>, Associate Product Analyst at Xpressbees</span>
-  </header>
+  <form id="form">
+    <input type="text" id="input" placeholder="New habit, e.g. Read 10 pages" maxlength="60" aria-label="New habit name" autocomplete="off">
+    <button class="add" type="submit">Add habit</button>
+  </form>
 
-  <main>
-    <h2 id="changelog">Changelog</h2>
-    <div class="log">
-      <article class="entry">
-        <div class="ver">v3.0<span class="when">November 2025 to now</span></div>
-        <div>
-          <h3>Xpressbees, Associate Product Analyst</h3>
-          <p>First full-time role, working at APM scope on a 7-member product team.</p>
-          <ul>
-            <li>Owning the product catalogue workstream, aimed at recovering revenue lost to billing disputes.</li>
-            <li>Owning enterprise B2B and B2C client integrations.</li>
-          </ul>
-        </div>
-      </article>
+  <section id="list" aria-live="polite"></section>
+</main>
 
-      <article class="entry">
-        <div class="ver">v2.1<span class="when">Side projects</span></div>
-        <div>
-          <h3>Tools I build for myself</h3>
-          <ul>
-            <li><b>Pune Transit MCP:</b> an MCP server that lets an AI assistant book Pune Metro, PMPML and MSRTC tickets.</li>
-            <li><b>Deploy extension:</b> a browser extension that deploys Claude artifacts to Vercel and commits them to GitHub in one click.</li>
-          </ul>
-        </div>
-      </article>
+<script>
+  const KEY = "hello-habits-v1";
+  const DAY_LABELS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-      <article class="entry">
-        <div class="ver">v2.0<span class="when">Before the first job</span></div>
-        <div>
-          <h3>DoctorsClub, founder</h3>
-          <p>Started a healthtech company and grew it to 102 doctors across Pune.</p>
-        </div>
-      </article>
+  let habits = [];
+  try { habits = JSON.parse(localStorage.getItem(KEY)) || []; } catch (e) { habits = []; }
 
-      <article class="entry">
-        <div class="ver">v1.0<span class="when">College</span></div>
-        <div>
-          <h3>Electronics &amp; Telecommunication Engineering, PICT</h3>
-          <p>The engineering base. I landed my first product role by cold-emailing the VP of Product.</p>
-        </div>
-      </article>
-    </div>
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(habits)); } catch (e) {} };
 
-    <section class="contact" id="contact">
-      <h2>Get in touch</h2>
-      <p>Open to conversations about product, logistics and early-stage ideas.</p>
-      <!-- Replace the placeholder email and links below -->
-      <a class="btn" href="mailto:your@email.com">Email me</a>
-      <div class="links"><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a><a href="https://github.com/your-handle">GitHub</a></div>
-    </section>
-  </main>
+  const dateKey = (d) =>
+    d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
 
-  <footer>Srujan Ranpise, Pune</footer>
-</div>
+  const lastDays = (n) => {
+    const out = [];
+    for (let i = n - 1; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      out.push(d);
+    }
+    return out;
+  };
+
+  function streakOf(habit) {
+    const d = new Date();
+    if (!habit.done[dateKey(d)]) d.setDate(d.getDate() - 1); // today not done yet: count from yesterday
+    let count = 0;
+    while (habit.done[dateKey(d)]) {
+      count++;
+      d.setDate(d.getDate() - 1);
+    }
+    return count;
+  }
+
+  function el(tag, cls, text) {
+    const node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function render() {
+    const list = document.getElementById("list");
+    list.replaceChildren();
+
+    if (!habits.length) {
+      list.append(el("p", "empty", "No habits yet. Add your first one above."));
+      return;
+    }
+
+    const todayKey = dateKey(new Date());
+
+    habits.forEach((habit) => {
+      const card = el("article", "habit");
+
+      const head = el("div", "head");
+      head.append(el("span", "name", habit.name));
+      const streak = el("span", "streak");
+      const n = streakOf(habit);
+      const b = el("b", null, String(n));
+      streak.append(b, document.createTextNode(n === 1 ? " day streak" : " day streak"));
+      head.append(streak);
+      card.append(head);
+
+      const days = el("div", "days");
+      lastDays(7).forEach((d) => {
+        const k = dateKey(d);
+        const done = !!habit.done[k];
+        const btn = el("button", "day" + (done ? " done" : "") + (k === todayKey ? " today" : ""));
+        btn.type = "button";
+        btn.setAttribute("aria-pressed", String(done));
+        btn.setAttribute("aria-label", habit.name + ", " + d.toDateString() + (done ? ", done" : ", not done"));
+        btn.append(el("span", null, k === todayKey ? "Today" : DAY_LABELS[d.getDay()]));
+        btn.append(el("span", "mark", done ? "✓" : String(d.getDate())));
+        btn.addEventListener("click", () => {
+          if (habit.done[k]) delete habit.done[k]; else habit.done[k] = true;
+          save();
+          render();
+        });
+        days.append(btn);
+      });
+      card.append(days);
+
+      const remove = el("button", "remove", "Delete habit");
+      remove.type = "button";
+      remove.addEventListener("click", () => {
+        if (!confirm('Delete "' + habit.name + '"?')) return;
+        habits = habits.filter((h) => h.id !== habit.id);
+        save();
+        render();
+      });
+      card.append(remove);
+
+      list.append(card);
+    });
+  }
+
+  document.getElementById("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = document.getElementById("input");
+    const name = input.value.trim();
+    if (!name) return;
+    habits.push({ id: Date.now().toString(36), name, done: {} });
+    input.value = "";
+    save();
+    render();
+  });
+
+  render();
+</script>
 </body>
 </html>
