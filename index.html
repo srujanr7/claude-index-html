@@ -3,264 +3,166 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mira Kale Portfolio</title>
+<title>Maya Rao – Product Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
 <style>
-body{margin:0}
-/* Layout: single column, left-aligned editorial rhythm; projects as a filterable index with expandable rows */
 :root{
-  --bg:#E9ECF0; --surface:#F6F7F9; --fg:#15181E; --muted:#5B6370; --line:#C9CFD8; --accent:#B8741A; --accent-ink:#FFFFFF;
-  --display:"Syne", "Helvetica Neue", Arial, sans-serif;
-  --body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --bg:#F2F4F8; --surface:#E4E9F2; --ink:#101828; --muted:#4A5568; --accent:#2F4BFF; --on-accent:#fff; --line:#C9D1E0;
+  --font:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#12151A; --surface:#1A1E25; --fg:#E7EAEF; --muted:#9AA3B0; --line:#2D333D; --accent:#E3A24A; --accent-ink:#17120A; color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#12151A; --surface:#1A1E25; --fg:#E7EAEF; --muted:#9AA3B0; --line:#2D333D; --accent:#E3A24A; --accent-ink:#17120A; color-scheme:dark}
-
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--body);
-  padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.wrap{max-width:1040px;margin:0 auto}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0F131A;--surface:#1A212D;--ink:#EDF0F7;--muted:#A3AEC2;--accent:#8DA0FF;--on-accent:#0F131A;--line:#2C3547;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0F131A;--surface:#1A212D;--ink:#EDF0F7;--muted:#A3AEC2;--accent:#8DA0FF;--on-accent:#0F131A;--line:#2C3547;color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1.0625rem;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-
-.demo{font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
-  border:1px dashed var(--line);padding:8px 12px;border-radius:6px;display:inline-block;margin-top:20px}
-
-header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);
-  display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;border-bottom:1px solid var(--line)}
-.logo{font:800 18px/1 var(--display);letter-spacing:-.02em}
-.logo span{color:var(--accent)}
-nav{display:flex;gap:20px;flex-wrap:wrap}
-nav a{text-decoration:none;font-size:14px;color:var(--muted)}
-nav a:hover{color:var(--fg)}
-
-.hero{padding-block:72px 56px;display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:end}
-.hero h1{font:800 clamp(44px,8vw,92px)/.95 var(--display);letter-spacing:-.04em;margin:0;text-wrap:balance}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero p{color:var(--muted);max-width:42ch;margin:0 0 20px}
-.avail{display:flex;align-items:center;gap:10px;font:500 13px/1 var(--mono)}
-.dot{width:9px;height:9px;border-radius:50%;background:#2E9E5B;box-shadow:0 0 0 4px color-mix(in srgb,#2E9E5B 22%,transparent)}
-.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
-.btn{font:600 14px/1 var(--body);padding:13px 18px;border-radius:999px;border:1px solid var(--fg);background:transparent;color:var(--fg);cursor:pointer;text-decoration:none}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-
-.stats{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}
-.stat{padding:22px 0}
-.stat+.stat{padding-left:24px;border-left:1px solid var(--line)}
-.stat b{display:block;font:700 32px/1 var(--display);font-variant-numeric:tabular-nums}
-.stat span{font-size:13px;color:var(--muted)}
-
-section{padding-block:72px 8px}
-.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-h2{font:700 clamp(28px,4vw,40px)/1.1 var(--display);letter-spacing:-.03em;margin:0 0 28px;text-wrap:balance}
-
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-.chip{font:500 13px/1 var(--mono);padding:9px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-
-.proj{border-bottom:1px solid var(--line)}
-.proj button.row{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;
-  grid-template-columns:64px 1fr auto 28px;gap:16px;align-items:baseline;padding:22px 0}
-.proj .yr{font:500 13px/1 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
-.proj h3{font:700 clamp(20px,2.6vw,26px)/1.2 var(--display);letter-spacing:-.02em;margin:0}
-.proj .kind{font-size:14px;color:var(--muted)}
-.proj .plus{font:400 22px/1 var(--mono);color:var(--accent);transition:transform .2s}
-.proj.open .plus{transform:rotate(45deg)}
-.proj .detail{display:grid;grid-template-columns:64px 1fr;gap:16px;padding-bottom:26px}
-.proj .detail > div{grid-column:2;min-width:0;display:grid;grid-template-columns:1.4fr 1fr;gap:28px}
-.proj .detail p{margin:0;max-width:60ch}
-.tags{display:flex;flex-wrap:wrap;gap:6px;align-content:start}
-.tag{font:500 12px/1 var(--mono);padding:6px 9px;border-radius:5px;background:var(--surface);border:1px solid var(--line)}
-.metric{font:600 14px/1.4 var(--body);color:var(--accent);margin-top:12px}
-
-.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
-.skills h4{font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
-.skills ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-
-.timeline{display:grid;gap:0}
-.job{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:22px 0;border-top:1px solid var(--line)}
-.job .when{font:500 13px/1.5 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
-.job h3{margin:0 0 4px;font:700 20px/1.25 var(--display)}
-.job .co{color:var(--accent);font-weight:600;font-size:14px}
-.job p{margin:8px 0 0;color:var(--muted);max-width:62ch}
-
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding-bottom:40px}
-form{display:grid;gap:14px}
-label{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:grid;gap:8px}
-input,textarea{font:16px/1.5 var(--body);color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;width:100%}
-textarea{min-height:120px;resize:vertical}
-.note{font-size:14px;color:var(--accent);min-height:1.4em}
-.mail{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font:500 15px/1 var(--mono);user-select:all}
-footer{border-top:1px solid var(--line);padding-block:24px 40px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-
-@media (max-width:760px){
-  .hero{grid-template-columns:1fr;gap:24px;padding-block:48px 40px}
-  .skills,.contact{grid-template-columns:1fr}
-  .proj button.row{grid-template-columns:44px 1fr 24px}
-  .proj .kind{display:none}
-  .proj .detail{grid-template-columns:44px 1fr}
-  .proj .detail > div{grid-template-columns:1fr;gap:16px}
-  .job{grid-template-columns:1fr;gap:6px}
-  nav a:not(.keep){display:none}
-  .stat+.stat{padding-left:14px}
-  .stat b{font-size:24px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-weight:800;text-decoration:none;letter-spacing:-.02em}
+nav{display:flex;gap:20px}
+nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.hero{padding:88px 0 72px}
+h1{font-size:clamp(3rem,11vw,8rem);line-height:.92;letter-spacing:-.045em;font-weight:800;margin:0 0 32px}
+h1 span{display:block;color:var(--accent)}
+.lede{max-width:34rem;font-size:1.25rem;color:var(--muted);margin:0 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:hover{transform:translateY(-1px)}
+section{padding:56px 0}
+h2{font-size:clamp(1.75rem,4vw,2.5rem);letter-spacing:-.03em;margin:0 0 28px;line-height:1.1}
+.work details{border-top:1px solid var(--line)}
+.work details:last-child{border-bottom:1px solid var(--line)}
+.work summary{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 0;cursor:pointer;list-style:none}
+.work summary::-webkit-details-marker{display:none}
+.work .t{font-size:clamp(1.3rem,3.5vw,2rem);font-weight:600;letter-spacing:-.02em}
+.work .m{color:var(--muted);font-size:.95rem;white-space:nowrap}
+.work summary::after{content:"+";font-size:1.6rem;color:var(--accent);transition:transform .2s}
+.work details[open] summary::after{transform:rotate(45deg)}
+.work summary:hover .t{color:var(--accent)}
+.work .body{display:grid;grid-template-columns:1fr 1fr;gap:28px;padding:0 0 32px}
+.work .shot{aspect-ratio:4/3;border-radius:14px;background:var(--surface);display:grid;place-items:center;color:var(--muted);font-size:.9rem}
+.work .body p{margin:0 0 12px}
+.work .body strong{color:var(--ink)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.about p{margin:0 0 16px;max-width:36rem}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.skills li{background:var(--surface);padding:8px 16px;border-radius:999px;font-weight:600;font-size:.95rem}
+.quote{background:var(--surface);border-radius:20px;padding:32px;font-size:1.3rem;letter-spacing:-.01em;margin:0}
+.quote cite{display:block;margin-top:14px;font-size:.95rem;font-style:normal;color:var(--muted)}
+.contact{padding-bottom:96px}
+.contact a.big{font-size:clamp(1.6rem,6vw,3.5rem);font-weight:800;letter-spacing:-.04em;text-decoration-thickness:4px;text-decoration-color:var(--accent);text-underline-offset:8px;word-break:break-word}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.9rem}
+@media (max-width:720px){
+  nav{gap:14px}
+  .hero{padding:56px 0 48px}
+  .work .body,.about{grid-template-columns:1fr}
+  .work .m{display:none}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Maya Rao</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-<div id="root"></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
-<script>/* htm 3.1.1 (Apache-2.0) */
-(function(exports,module,define){
-!function(n,e){"object"==typeof exports&&"undefined"!=typeof module?module.exports=e():"function"==typeof define&&define.amd?define(e):n.htm=e()}(this,function(){var n=function(e,t,u,s){var r;t[0]=0;for(var p=1;p<t.length;p++){var h=t[p++],o=t[p]?(t[0]|=h?1:2,u[t[p++]]):t[++p];3===h?s[0]=o:4===h?s[1]=Object.assign(s[1]||{},o):5===h?(s[1]=s[1]||{})[t[++p]]=o:6===h?s[1][t[++p]]+=o+"":h?(r=e.apply(o,n(e,o,u,["",null])),s.push(r),o[0]?t[0]|=2:(t[p-2]=0,t[p]=r)):s.push(o)}return s},e=new Map;return function(t){var u=e.get(this);return u||(u=new Map,e.set(this,u)),(u=n(this,u.get(t)||(u.set(t,u=function(n){for(var e,t,u=1,s="",r="",p=[0],h=function(n){1===u&&(n||(s=s.replace(/^\s*\n\s*|\s*\n\s*$/g,"")))?p.push(0,n,s):3===u&&(n||s)?(p.push(3,n,s),u=2):2===u&&"..."===s&&n?p.push(4,n,0):2===u&&s&&!n?p.push(5,0,!0,s):u>=5&&((s||!n&&5===u)&&(p.push(u,0,s,t),u=6),n&&(p.push(u,n,0,t),u=6)),s=""},o=0;o<n.length;o++){o&&(1===u&&h(),h(o));for(var f=0;f<n[o].length;f++)e=n[o][f],1===u?"<"===e?(h(),p=[p],u=3):s+=e:4===u?"--"===s&&">"===e?(u=1,s=""):s=e+s[0]:r?e===r?r="":s+=e:'"'===e||"'"===e?r=e:">"===e?(h(),u=1):u&&("="===e?(u=5,t=s,s=""):"/"===e&&(u<5||">"===n[o][f+1])?(h(),3===u&&(p=p[0]),u=p,(p=p[0]).push(2,0,u),u=0):" "===e||"\t"===e||"\n"===e||"\r"===e?(h(),u=2):s+=e),3===u&&"!--"===s&&(u=4,p=p[0])}return h(),p}(t)),u),arguments,[])).length>1?u:u[0]}});
-}).call(window);
-</script>
-<script>
-const { useState } = React;
-const html = window.htm.bind(React.createElement);
-
-const PROJECTS = [
-  { yr:"2026", title:"Tidepool", kind:"Product · Web app", cat:"Product",
-    text:"A shared budgeting app for flatmates. Splits rent and utilities automatically and nudges people before a bill is due rather than after.",
-    metric:"Sample metric: 12k monthly users, 4.7 store rating", tags:["React","Node","Postgres","Stripe"] },
-  { yr:"2025", title:"Fieldnote", kind:"Design system", cat:"Design",
-    text:"A component library and token set for a fictional agri-tech company, built to work offline-first on low-end Android phones in the field.",
-    metric:"Sample metric: 38 components, 2 themes", tags:["Figma","Storybook","CSS tokens"] },
-  { yr:"2025", title:"Ledgerline", kind:"Open source · CLI", cat:"Open source",
-    text:"A command-line tool that turns bank CSV exports into clean monthly reports, with rules you write in plain YAML.",
-    metric:"Sample metric: 1.9k GitHub stars", tags:["TypeScript","CLI","YAML"] },
-  { yr:"2024", title:"Monsoon Map", kind:"Data visualisation", cat:"Design",
-    text:"An interactive map of rainfall across a decade, with a scrubber that lets readers compare any two years side by side.",
-    metric:"Sample metric: featured in a design newsletter", tags:["D3","Canvas","Mapbox"] },
-  { yr:"2023", title:"Queue Kit", kind:"Product · SaaS", cat:"Product",
-    text:"Appointment queueing for small clinics. Patients join from a QR code and get an SMS when they are two places away.",
-    metric:"Sample metric: average wait cut from 40 to 15 minutes", tags:["Next.js","Twilio","Redis"] },
-];
-
-const JOBS = [
-  { when:"2024 — Now", role:"Senior Frontend Engineer", co:"Northwind Labs (fictional)", text:"Leads the web platform team. Rebuilt the checkout flow and set up the shared design system." },
-  { when:"2021 — 2024", role:"Product Engineer", co:"Brightlane (fictional)", text:"Shipped the mobile web app from zero to launch with a team of four." },
-  { when:"2019 — 2021", role:"Junior Developer", co:"Pixel & Pine Studio (fictional)", text:"Built marketing sites and small tools for agency clients." },
-];
-
-function Project({ p, open, onToggle }) {
-  return html`<div class=${"proj" + (open ? " open" : "")}>
-    <button class="row" onClick=${onToggle} aria-expanded=${open}>
-      <span class="yr">${p.yr}</span>
-      <h3>${p.title}</h3>
-      <span class="kind">${p.kind}</span>
-      <span class="plus" aria-hidden="true">+</span>
-    </button>
-    ${open && html`<div class="detail"><div>
-      <div><p>${p.text}</p><div class="metric">${p.metric}</div></div>
-      <div class="tags">${p.tags.map(t => html`<span class="tag" key=${t}>${t}</span>`)}</div>
-    </div></div>`}
-  </div>`;
-}
-
-function Contact() {
-  const [note, setNote] = useState("");
-  const [copied, setCopied] = useState(false);
-  const email = "hello@mirakale.example";
-  const copy = () => {
-    navigator.clipboard?.writeText(email).then(() => setCopied(true), () => {});
-  };
-  const submit = e => {
-    e.preventDefault();
-    const name = e.target.elements.cname.value.trim();
-    setNote(name ? `Thanks, ${name}. This is a demo form, so nothing was sent.` : "Add your name so I know who's writing.");
-  };
-  return html`<section id="contact" class="contact">
-    <div>
-      <div class="eyebrow">Contact</div>
-      <h2>Have a project in mind? Let's talk.</h2>
-      <div class="mail"><span>${email}</span>
-        <button class="chip" onClick=${copy}>${copied ? "Copied" : "Copy"}</button></div>
-    </div>
-    <form onSubmit=${submit}>
-      <label for="cname">Name<input id="cname" name="cname" placeholder="Your name"/></label>
-      <label for="cemail">Email<input id="cemail" type="email" placeholder="you@example.com"/></label>
-      <label for="cmsg">Message<textarea id="cmsg" placeholder="Tell me a little about the project"></textarea></label>
-      <div><button class="btn primary" type="submit">Send message</button></div>
-      <div class="note" role="status">${note}</div>
-    </form>
-  </section>`;
-}
-
-function App() {
-  const cats = ["All", "Product", "Design", "Open source"];
-  const [cat, setCat] = useState("All");
-  const [open, setOpen] = useState(0);
-  const list = PROJECTS.filter(p => cat === "All" || p.cat === cat);
-
-  return html`<div class="wrap">
-    <header class="nav">
-      <div class="logo">mira<span>.</span>kale</div>
-      <nav><a href="#work" class="keep">Work</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact" class="keep">Contact</a></nav>
-    </header>
-
-    <div class="demo">Sample portfolio · all names and numbers are placeholders</div>
-
+<main id="top">
+  <div class="wrap">
     <div class="hero">
-      <h1>I build calm, <em>useful</em> software.</h1>
-      <div>
-        <p>Mira Kale is a frontend engineer and product designer who turns messy everyday problems into simple interfaces.</p>
-        <div class="avail"><span class="dot"></span>Open to freelance work</div>
-        <div class="btns"><a class="btn primary" href="#work">See projects</a><a class="btn" href="#contact">Get in touch</a></div>
+      <h1>I design products people finish using<span>without a manual.</span></h1>
+      <p class="lede">I’m Maya, a product designer in Pune. I work with early-stage teams on onboarding, payments and everyday tools. This is placeholder content for a sample portfolio.</p>
+      <div class="btns">
+        <a class="btn primary" href="#work">See my work</a>
+        <a class="btn" href="#contact">Get in touch</a>
       </div>
     </div>
 
-    <div class="stats">
-      <div class="stat"><b>7 yrs</b><span>building for the web</span></div>
-      <div class="stat"><b>24</b><span>products shipped</span></div>
-      <div class="stat"><b>3</b><span>open-source tools</span></div>
-    </div>
-
-    <section id="work">
-      <div class="eyebrow">Selected work</div>
-      <h2>Projects</h2>
-      <div class="filters">
-        ${cats.map(c => html`<button key=${c} class="chip" aria-pressed=${cat === c} onClick=${() => { setCat(c); setOpen(0); }}>${c}</button>`)}
-      </div>
-      ${list.map((p, i) => html`<${Project} key=${p.title} p=${p} open=${open === i} onToggle=${() => setOpen(open === i ? -1 : i)}/>`)}
+    <section id="work" class="work">
+      <h2>Selected work</h2>
+      <details open>
+        <summary><span class="t">Splitwell: shared expenses</span><span class="m">Mobile app, 2025</span></summary>
+        <div class="body">
+          <div class="shot" role="img" aria-label="Placeholder for Splitwell screens">Project image</div>
+          <div>
+            <p><strong>Problem.</strong> Roommates dropped off after the first week because settling up took too many taps.</p>
+            <p><strong>What I did.</strong> Rebuilt the settle-up flow around one question: who owes whom today?</p>
+            <p><strong>Result.</strong> Weekly active groups rose 38% in two months.</p>
+          </div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="t">Kiraana: inventory for corner shops</span><span class="m">Web dashboard, 2024</span></summary>
+        <div class="body">
+          <div class="shot" role="img" aria-label="Placeholder for Kiraana dashboard">Project image</div>
+          <div>
+            <p><strong>Problem.</strong> Shop owners tracked stock in notebooks and ran out of fast-moving items.</p>
+            <p><strong>What I did.</strong> Designed a low-stock view that works on a ₹7,000 phone and in Hindi and Marathi.</p>
+            <p><strong>Result.</strong> Stock-outs fell by a quarter across 60 pilot shops.</p>
+          </div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="t">Clearpay: checkout redesign</span><span class="m">Fintech, 2024</span></summary>
+        <div class="body">
+          <div class="shot" role="img" aria-label="Placeholder for Clearpay checkout">Project image</div>
+          <div>
+            <p><strong>Problem.</strong> One in three buyers abandoned checkout at the payment-method step.</p>
+            <p><strong>What I did.</strong> Moved saved methods to the top and cut the form to four fields.</p>
+            <p><strong>Result.</strong> Checkout completion improved by 12 points.</p>
+          </div>
+        </div>
+      </details>
     </section>
 
-    <section id="skills">
-      <div class="eyebrow">Toolkit</div>
-      <h2>What I work with</h2>
-      <div class="skills">
-        <div><h4>Build</h4><ul><li>React & Next.js</li><li>TypeScript</li><li>Node.js</li><li>Postgres</li></ul></div>
-        <div><h4>Design</h4><ul><li>Figma</li><li>Design systems</li><li>Prototyping</li><li>Accessibility</li></ul></div>
-        <div><h4>Ship</h4><ul><li>Vercel</li><li>GitHub Actions</li><li>Analytics</li><li>User interviews</li></ul></div>
+    <section id="about">
+      <h2>About me</h2>
+      <div class="about">
+        <div>
+          <p>I’ve spent five years designing for startups, from seed-stage apps to a payments product used by a few hundred thousand people.</p>
+          <p>I like working close to engineers and analysts, and I test ideas with real users before polishing anything.</p>
+        </div>
+        <div>
+          <ul class="skills" aria-label="Skills">
+            <li>User research</li><li>Interaction design</li><li>Design systems</li><li>Prototyping</li><li>Figma</li><li>Usability testing</li><li>Data-informed design</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section id="experience">
-      <div class="eyebrow">Experience</div>
-      <h2>Where I've worked</h2>
-      <div class="timeline">
-        ${JOBS.map(j => html`<div class="job" key=${j.role}>
-          <div class="when">${j.when}</div>
-          <div><h3>${j.role}</h3><div class="co">${j.co}</div><p>${j.text}</p></div>
-        </div>`)}
-      </div>
+    <section>
+      <figure class="quote" style="margin:0">
+        “Maya turned a confusing flow into something our users stopped complaining about.”
+        <cite>Arjun Mehta, Head of Product at Clearpay (sample quote)</cite>
+      </figure>
     </section>
 
-    <${Contact}/>
+    <section id="contact" class="contact">
+      <h2>Have a project in mind?</h2>
+      <a class="big" href="mailto:hello@example.com">hello@example.com</a>
+    </section>
+  </div>
+</main>
 
-    <footer><span>© 2026 Mira Kale (fictional)</span><span>Built with React</span></footer>
-  </div>`;
-}
-
-ReactDOM.createRoot(document.getElementById("root")).render(html`<${App}/>`);
-</script>
+<footer>
+  <div class="wrap">© 2026 Maya Rao. Dummy portfolio for demonstration.</div>
+</footer>
 </body>
 </html>
